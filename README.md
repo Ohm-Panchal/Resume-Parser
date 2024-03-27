@@ -36,12 +36,7 @@ The application utilizes SQLite for storing and managing data related to user up
    ```bash
    git clone https://github.com/Ohm-Panchal/Resume-Parser
 
-2. Navigate to the project directory:
-
-   ``` bash
-   cd resume-revealer
-
-3. Install the required dependencies using pip:
+2. Install the required dependencies using pip:
  
    ``` bash
    pip install -r requirements.txt

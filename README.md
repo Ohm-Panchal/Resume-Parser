@@ -34,7 +34,7 @@ The application utilizes SQLite for storing and managing data related to user up
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/resume-revealer.git
+   [git clone https://github.com/your-username/resume-revealer.git](https://github.com/Ohm-Panchal/Resume-Parser.git)
 
 2. Navigate to the project directory:
 

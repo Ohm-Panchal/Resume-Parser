@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Match Wheel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px;
+        }
+
+        .resume-wheel {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .resume-progress {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, auto, auto, 0);
+            border-radius: 50%;
+            background-color: #4CAF50;
+            /* Green color */
+            transform-origin: center;
+            animation: fillAnimation 2s ease forwards;
+        }
+
+        @keyframes fillAnimation {
+            to {
+                transform: rotate(calc(var(--percentage) * 3.6deg));
+            }
+        }
+
+        .resume-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .resume-info {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .resume-info-block {
+            width: 30%;
+            /* Adjust as needed */
+            background-color: #ddd;
+            /* Slightly darker color */
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            /* Common shadow for both work experience and skills */
+        }
+
+        .resume-info-block.education {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            /* Shadow specifically for education */
+        }
+
+        .resume-info-block.skills,
+        .resume-info-block.work-experience {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            /* Shadow for both skills and work experience */
+        }
+
+        .resume-info h2 {
+            color: #333;
+        }
+
+        .resume-info p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .chat-container {
+            width: 80%;
+            height: 4rem;
+            margin-top: 20px;
+        }
+        input[type=text] {
+            width: 400px;
+            height: 2.5rem;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+        }
+        button{
+            width: 100px;
+            height: 2.5rem;
+            background-color: #070707;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+        }
+        .chat-box {
+            width: 80%;
+            height: 150px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-wheel">
+        <div class="resume-progress" style="--percentage: 75;"></div>
+        <div class="resume-label">{{data[3]}}%</div>
+    </div>
+
+    <div class="resume-info">
+        <div class="resume-info-block education">
+            <h2>Education</h2>
+            <p>{{edu}}</p>
+            <!-- Add more education details as needed -->
+        </div>
+
+        <div class="resume-info-block work-experience">
+            <h2>Work Experience</h2>
+            <p>{{wex}}</p>
+            <!-- Add more work experience details as needed -->
+        </div>
+
+        <div class="resume-info-block skills">
+            <h2>Projects</h2>
+            <p>{{proj}}</p>
+            <!-- Add more skills details as needed -->
+        </div>
+    </div>
+
+    <div class="resume-info">
+        <div class="resume-info-block education">
+            <h2>Career Trajectory</h2>
+            <p>{{ct}}</p>
+            <!-- Add more education details as needed -->
+        </div>
+
+        <div class="resume-info-block work-experience">
+            <h2>Job Title</h2>
+            <p>{{jt}}</p>
+            <!-- Add more work experience details as needed -->
+        </div>
+
+        <div class="resume-info-block skills">
+            <h2>Skills</h2>
+            <p>{{data[5]}}</p>
+            <!-- Add more skills details as needed -->
+        </div>
+    </div>
+
+    <div class="chat-box">
+        {{custom_query_ans}}
+    </div>
+    <form action="/applicant/{{data[1]}}/{{data[0]}}" method="post">
+        <input type="text" id="userInput" placeholder="Type your question..." name="query">
+        <button type="submit" value="submit">Send</button>
+    </form>
+</body>
+
+</html>

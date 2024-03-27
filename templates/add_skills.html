@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ADMIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1 {
+            font-family: "Raleway", Arial, sans-serif
+        }
+
+        h1 {
+            letter-spacing: 6px
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        .button {
+            background-color: #04AA6D;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 2%;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #539fb6;
+        }
+
+        .button1:hover {
+            background-color: #b4e7f7;
+            color: rgb(0, 0, 0);
+        }
+
+        .button2 {
+            background-color: rgb(13, 245, 5);
+            color: black;
+            border: 3px solid #fafafa;
+            border-radius: 1rem;
+        }
+
+        .button2:hover {
+            background-color: #84d5ee;
+            color: rgb(0, 0, 0);
+        }
+
+        footer {
+            margin-top: 10rem;
+        }
+
+        table {
+            width: 70%;
+            font-family: Arial, sans-serif;
+            /* Add rounded corners */
+            border-radius: 11px;
+            overflow: hidden;
+            box-shadow: 0px 4px 15px 2px rgba(0, 0, 0, 0.2), 0px 30px 30px -14px rgba(80, 53, 199, 0.05);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Alternate row colors for better readability */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+            transition: ease-in .1s;
+        }
+
+        /* Hover effect for rows */
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-content" style="max-width:1500px">
+
+        <!-- Header -->
+        <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+            <caption><strong style="font-size: 2.5rem;"><b><u>ADD SKILLS</u></b></strong></caption>
+        </header>
+
+        <center>
+            <table>
+                <form action="/add_skill_action" method="post">
+                    <thead>
+                        {% for i in data %}
+                        <tr>
+
+                            <th>{{i[1]}}</th>
+                            <th><input type="checkbox" name="skills" value="{{i[0]}}"></th>
+
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                        <tr>
+                            <th colspan="2">
+                                <input type="hidden" value="{{s_id}}" name="j_id">
+                                <center><input type="submit"></center>
+                            </th>
+                        </tr>
+                </form>
+                <tr>
+                    <th>Add New Skill: </th>
+                    <th>
+                        <form action="/add_new_skill" method="post">
+                            <input type="hidden" name="j_idd" value="{{s_id}}">
+                            <input type="text" name="skilll"><input type="submit" value="ADD">
+                        </form>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+
+        </center>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <p>Powered by <a href="/" target="_blank" class="w3-hover-text-green">NetRunners</a></p>
+        </footer>
+
+</body>
+
+</html>

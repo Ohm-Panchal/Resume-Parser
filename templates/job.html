@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume Match Wheel</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 50px;
+            }
+
+            .resume-wheel {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: #eee;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+
+            .resume-progress {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                clip: rect(0, auto, auto, 0);
+                border-radius: 50%;
+                background-color: #4CAF50;
+                /* Green color */
+                transform-origin: center;
+                animation: fillAnimation 2s ease forwards;
+            }
+
+            @keyframes fillAnimation {
+                to {
+                    transform: rotate(calc(var(--percentage) * 3.6deg));
+                }
+            }
+
+            .resume-label {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #333;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .resume-info {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            .resume-info-block {
+                width: 30%;
+                /* Adjust as needed */
+                background-color: #ddd;
+                /* Slightly darker color */
+                padding: 10px;
+                border-radius: 8px;
+                margin-top: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                /* Common shadow for both work experience and skills */
+            }
+
+            .resume-info-block.education {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+                /* Shadow specifically for education */
+            }
+
+            .resume-info-block.skills,
+            .resume-info-block.work-experience {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+                /* Shadow for both skills and work experience */
+            }
+
+            .resume-info h2 {
+                color: #333;
+            }
+
+            .resume-info p {
+                color: #666;
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="resume-wheel">
+            <div class="resume-progress" style="--percentage: 75;"></div>
+            <div class="resume-label">75%</div>
+        </div>
+
+        <div class="resume-info">
+            <div class="resume-info-block education">
+                <h2>Education</h2>
+                <p>Bachelor's in Computer Science</p>
+                <!-- Add more education details as needed -->
+            </div>
+
+            <div class="resume-info-block work-experience">
+                <h2>Work Experience</h2>
+                <p>Software Engineer at ABC Inc.</p>
+                <!-- Add more work experience details as needed -->
+            </div>
+
+            <div class="resume-info-block skills">
+                <h2>Skills</h2>
+                <p>JavaScript, Python, HTML, CSS</p>
+                <!-- Add more skills details as needed -->
+            </div>
+        </div>
+
+    </body>
+
+</html>

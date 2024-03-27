@@ -102,7 +102,7 @@ The application utilizes SQLite for storing and managing data related to user up
 5. **Take Further Action**:
    - Based on the analysis and rankings, HR personnel can take further action such as scheduling interviews or contacting candidates.
   
-## Technology Used:
+## Technology Used
 #### Frontend:
 1. HTML/CSS
 

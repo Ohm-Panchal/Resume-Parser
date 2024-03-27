@@ -94,10 +94,21 @@ The application utilizes SQLite for storing and managing data related to user up
 3. **Analyze Resumes**:
    - Resumes are automatically processed upon upload.
    - The application extracts text from the resumes and matches the skills mentioned with those required for the job position.
-
+   - 
 4. **Review Ranking and Skill Matching**:
    - HR personnel can review the rankings and skill matching scores of the uploaded resumes.
    - This information helps in identifying the most suitable candidates for the job position.
 
 5. **Take Further Action**:
    - Based on the analysis and rankings, HR personnel can take further action such as scheduling interviews or contacting candidates.
+  
+##Technology Used
+#### Frontend:
+1. HTML/CSS
+
+#### Backend:
+1. Python
+2. Flask Frameword
+3. Jinja
+4. SQLite
+5. Mistral AI

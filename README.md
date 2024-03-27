@@ -1,4 +1,5 @@
 ![Resume Revealer Home Page](https://github.com/404-Definitely-Found/Mined-Hackathon-NetRunner/assets/92706697/9beddfef-f712-4f40-b61f-1280258a1ff0)
+![Resume Revealer Demo](https://github.com/Ohm-Panchal/Resume-Parser/assets/82696835/da55ab6f-6366-4a6b-a27c-a003d1fc6b68)
 # Resume Revealer 
 
 Resume Revealer is a web-based application designed to streamline the resume analysis process for both users and HR personnel. The application allows users to upload their resumes, which are then analyzed to extract key information such as skills and experiences. HR personnel can also use the application to review uploaded resumes and assess their suitability for specific job positions based on skill matching.
